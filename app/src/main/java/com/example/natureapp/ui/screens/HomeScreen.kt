@@ -16,6 +16,8 @@ import androidx.compose.ui.unit.dp
 import com.example.natureapp.ui.components.CardImage
 import com.example.natureapp.ui.models.naturalPlaces
 import com.example.natureapp.ui.theme.NatureAppTheme
+import androidx.compose.runtime.SideEffect
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
 fun HomeScreen(innerPadding: PaddingValues){
@@ -36,6 +38,7 @@ fun HomeScreen(innerPadding: PaddingValues){
         }
     }
 }
+
 
 @Preview(
     showBackground = true,

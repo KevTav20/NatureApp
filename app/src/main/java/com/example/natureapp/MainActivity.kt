@@ -9,10 +9,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.natureapp.ui.screens.HomeScreen
 import com.example.natureapp.ui.theme.NatureAppTheme
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +27,18 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize()
                 ) { innerPadding ->
                     HomeScreen(innerPadding = innerPadding)
+                    OcultarStatusBar()
                 }
             }
         }
+    }
+}
+
+@Composable
+fun OcultarStatusBar(){
+    val systemUiController =  rememberSystemUiController()
+
+    SideEffect {
+        systemUiController.isStatusBarVisible = false
     }
 }
